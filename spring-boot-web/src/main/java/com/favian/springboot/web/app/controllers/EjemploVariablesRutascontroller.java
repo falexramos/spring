@@ -9,7 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/variables")
 public class EjemploVariablesRutascontroller {
-
+	
+	@GetMapping("/")
+	public String index (Model model) {
+		model.addAttribute("titulo", "Enviar Parametro de la ruta (@PathVariable)");
+		return "variables/index";
+	
+	}
+	
 	@GetMapping("/string/{texto}")
 	public String variables(@PathVariable String texto,Model model) {
 		model.addAttribute("titulo", "Recibir Parametro de la ruta (@PathVariable)");
@@ -17,5 +24,12 @@ public class EjemploVariablesRutascontroller {
 		return "variables/ver";
 	}
 	
+	@GetMapping("/string/{texto}/{numero}")
+	public String variables(@PathVariable String texto,@PathVariable Integer numero,Model model) {
+		model.addAttribute("titulo", "Recibir Parametro de la ruta (@PathVariable)");
+		model.addAttribute("resultado", "el texto enviado en la ruta es: "+texto
+							+ " y el número enviado es: "+numero);
+		return "variables/ver";
+	}
 	
 }
