@@ -28,4 +28,7 @@ public class ItemFactura {
 		this.cantidad = cantidad;
 	}
 
+	public Integer calcularImporte() {
+		return cantidad * producto.getPrecio();
+	}
 }
