@@ -19,20 +19,32 @@
 
 			<tr>
 				<td>Nombre</td>
-				<td><input type="text" th:field="*{nombre}"/></td>
+				<td>
+				<input type="text" th:field="*{nombre}"/>
+				<small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				</td>
 			</tr>
 			<tr>
 				<td>Apellido</td>
-				<td><input type="text" th:field="*{apellido}"/></td>
+				<td>
+				<input type="text" th:field="*{apellido}"/>
+				<small th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+				</td>
 			</tr>
 			<tr>
 				<td>Email</td>
-				<td><input type="email" th:field="*{email}"/></td>
+				<td>
+				<input type="email" th:field="*{email}"/>
+				<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+				</td>
 			</tr>
 			
 			<tr>
 				<td>Fecha</td>
-				<td><input type="text" th:field="*{createAt}"/></td>
+				<td>
+				<input type="text" th:field="*{createAt}"/>
+				<small th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}"></small>
+				</td>
 			</tr>
 			
 			<tr>
@@ -40,7 +52,7 @@
 			</tr>
 		
 		</table>
-		<input type="hidden" th:field="*{id}"/>
+		
 	</form>
 </div>
 </body>

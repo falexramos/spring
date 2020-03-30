@@ -9,4 +9,11 @@ public interface IClienteDao {
 	public List<Cliente> findAll();
 	
 	public void save (Cliente cliente);
+	
+	public Cliente findOne(long id);
+	
+	
+	public void delete(long id);
+	
+	
 }
